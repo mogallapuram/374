@@ -1,0 +1,11 @@
+---
+- name: create users from user list file
+  hosts: prod
+  vars_files:
+    - user_list.yml
+  tasks:
+    - name: creating users
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ developer }}"
