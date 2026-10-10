@@ -1,0 +1,17 @@
+---
+users:
+  - name: john47
+    first: john
+    middle: lee
+    last: cruz
+    uid: 3265
+  - name: rio30
+    first: rio
+    middle: lee
+    last: reed
+    uid: 3266
+  - name: sara75
+    first: sara
+    middle: jude
+    last: smith
+    uid: 3267

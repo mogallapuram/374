@@ -1,0 +1,5 @@
+.ssh/
+ansible-navigator.log
+*-artifact-*
+password-*
+filename-*

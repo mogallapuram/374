@@ -1,0 +1,14 @@
+---
+ansible-navigator:
+  ansible:
+    config:
+      path: ./ansible.cfg
+  execution-environment:
+    image: aap.cloud4ram.local/ee-supported-rhel9:latest
+    pull:
+      policy: missing
+  mode: stdout
+  logging:
+    file: /dev/null
+  playbook-artifact:
+    enable: false
