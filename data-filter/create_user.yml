@@ -1,0 +1,19 @@
+---
+- name: Create users with gecos
+  become: true
+  hosts: dev
+  vars_files:
+    - user_list.yml
+  tasks:
+    - name: Creating users
+      vars:
+        user_password: "{{ lookup('ansible.builtin.password', playbook_dir + '/password-' + item.name, length=6, chars='digits') }}"
+        user_salt: "{{ lookup('ansible.builtin.password', playbook_dir + '/filename-' + item.name, length=16, chars='ascii_letters,digits') }}"
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        uid: "{{ item.uid }}"
+        comment: "{{ item.first | capitalize }} {{ item.middle | capitalize }} {{ item.last | capitalize }}"
+        password: "{{ user_password | password_hash('sha512', user_salt) }}"
+        state: present
+        update_password: on_create
+      loop: "{{ users }}"
