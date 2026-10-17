@@ -1,0 +1,9 @@
+---
+version: 1
+build_arg_defaults:
+  # Homelab: Hub may only have ee-supported-rhel9.
+  # Exam: use the minimal + ansible-builder image names from the question.
+  EE_BASE_IMAGE: aap.cloud4ram.local/ee-supported-rhel9:latest
+  EE_BUILDER_IMAGE: aap.cloud4ram.local/ee-supported-rhel9:latest
+dependencies:
+  galaxy: requirements.yml

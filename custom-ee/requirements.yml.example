@@ -1,0 +1,5 @@
+---
+collections:
+  # Copy tarball from q8 into this directory; rename here if version differs
+  - name: rhel-user-1.0.0.tar.gz
+    type: file

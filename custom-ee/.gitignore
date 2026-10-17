@@ -1,0 +1,6 @@
+.ssh/
+ansible-navigator.log
+*-artifact-*
+context/
+classroom-ca.pem
+rhel-user-*.tar.gz
