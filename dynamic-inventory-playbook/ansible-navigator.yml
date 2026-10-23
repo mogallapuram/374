@@ -1,0 +1,11 @@
+---
+ansible-navigator:
+  execution-environment:
+    image: aap.cloud4ram.local/custom-ee-python:v1.0
+    pull:
+      policy: missing
+  mode: stdout
+  logging:
+    file: /dev/null
+  playbook-artifact:
+    enable: false
