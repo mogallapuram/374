@@ -1,0 +1,11 @@
+---
+- name: Copy the content to tmp
+  hosts: testing
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Copy to temp
+      ansible.builtin.copy:
+        content: "this is a test content"
+        dest: /tmp/copy-file.txt
+        mode: '0644'
