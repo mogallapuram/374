@@ -1,0 +1,9 @@
+---
+- name: Generate the customized banner
+  ansible.builtin.copy:
+    content: "Welcome to {{ ['servera', 'serverb', 'control'] | random }}\nManaged by Ansible\n"
+    dest: "{{ motd_path }}"
+    backup: "{{ motd_backup }}"
+    owner: root
+    group: root
+    mode: "0644"
